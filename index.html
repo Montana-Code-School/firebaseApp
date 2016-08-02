@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="ideaList">
+  <head>
+    <meta charset="utf-8">
+    <title>ideaList</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    
+  </head>
+  <body ng-controller="mainCtrl">
+
+    <h1>Idea List</h1>
+    <form class="adder" ng-submit="addNewIdea(newIdea)">
+      <input type="text" ng-model="newIdea" placeholder="Add new idea...">
+    </form>
+
+    <div class="ideas" ng-repeat="idea in ideas">
+      <h3 ng-hide="editable" ng-dblclick="editable=true">{{idea.$value}} -<span ng-click="deleteIdea(idea)"> X</span></h3>
+      <form ng-show="editable" ng-submit="editIdea(idea);editable=false">
+        <input type="text" ng-model="idea.$value">
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="app.js" type="text/javascript"></script>
+    <script src="mainCtrl.js" type="text/javascript"></script>
+  </body>
+</html>

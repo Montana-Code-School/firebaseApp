@@ -1,0 +1,49 @@
+body {
+  background-image: url('http://images.huffingtonpost.com/2015-01-20-IdeasMakeorBreakYourBusiness.jpg');
+  background-size: cover;
+  background-position: top;
+  color: rgba(13, 33, 154, 0.74);
+  font-family: "Oswald";
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  color: rgb(78, 185, 231);
+  text-shadow: 1px 1px rgba(360, 360, 360, 0.56);
+}
+
+h3, input {
+  font-size: 40px;
+  width: max-content;
+  margin: auto;
+}
+
+input {
+  font-family: "Oswald";
+  background-color: rgba(360, 360, 360, 0.36);
+  color: rgba(13, 33, 154, 0.84);
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(13, 33, 154, 0.84);
+  opacity: .5;
+}
+
+span {
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.ideas {
+  background-color: rgba(53, 167, 16, 0.71);
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 2px;
+}
+
+.adder {
+  margin: 20px;
+}
