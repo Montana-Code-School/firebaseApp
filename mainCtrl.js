@@ -1,9 +1,11 @@
 angular.module("ideaList")
-.controller("mainCtrl", function($scope, $firebaseArray, $firebaseAuth) {
+.controller("mainCtrl", function($scope, $firebaseArray) {
   var ideaRef = new Firebase('https://idealist-e1141.firebaseio.com/ideas');
-  var authRef = new Firebase('https://idealist-e1141.firebaseio.com/users');
-  var auth = $firebaseAuth(authRef);
-  
+
+  setInterval(function(){
+    console.log($scope.newIdea)
+  },500)
+
   $scope.ideas = $firebaseArray(ideaRef);
   $scope.editable = false;
 
@@ -19,10 +21,4 @@ angular.module("ideaList")
   $scope.deleteIdea = function(idea){
     $scope.ideas.$remove(idea);
   };
-
-  auth.$authWithOAuthPopup("facebook").then(function(authData) {
-    console.log("Logged in as:", authData.uid);
-  }).catch(function(error) {
-    console.log("Authentication failed:", error);
-  });
 });
